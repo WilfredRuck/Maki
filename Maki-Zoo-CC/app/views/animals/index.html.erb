@@ -1,0 +1,11 @@
+<h1>Welcome to the Maki Zoo!</h1>
+
+<h3>Animals in our zoo:</h3>
+
+<% @animals.each do |animal| %>
+  <p>
+    <%= animal.name %>
+  </p>
+<% end %>
+
+<%= link_to "add animal", new_animal_path %>
