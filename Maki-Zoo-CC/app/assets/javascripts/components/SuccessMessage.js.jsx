@@ -4,11 +4,16 @@ class SuccessMessage extends React.Component {
   }
 
   render() {
-    return (
-    	<div>
-    		<p>Animal Added Successfully!</p>
-    	</div>
-    )
+      if (message) {
+        return (
+        	<div>
+        		<p>Animal Added Successfully!</p>
+        	</div>
+        )
+      }
+      else{
+        return null
+      }
   }
 }
 

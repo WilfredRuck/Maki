@@ -32,13 +32,16 @@ class AddAnimal extends React.Component {
       // TODO: Fix the success callback to properly set the state.
       // Why doesn't it work as currently implemented?
       success: (data) => {
-        console.log('success')
-        console.log(data)
-        this.setState({formSuccessMessage: data.message})
+        this.setState({
+          formSuccessMessage: data.message,
+          formErrorMessage: ''
+        })
       },
       error: (data) => {
-        console.log('error')
-        console.log(data)
+        this.setState({
+          formErrorMessage: data.message,
+          formSuccessMessage: ''
+        })
       },
     })
   }
@@ -48,8 +51,8 @@ class AddAnimal extends React.Component {
       <div
         className="add-animal-form"
       >
-        <ErrorMessage />
-        <SuccessMessage />
+        <ErrorMessage message={this.state.message}/>
+        <SuccessMessage message={this.state.message}/>
         <div
           className="form-group"
         >

@@ -4,11 +4,16 @@ class ErrorMessage extends React.Component {
   }
 
   render() {
-    return (
-    	<div>
-    		<p>Invalid Input! (Can't be blank or repeated)</p>
-    	</div>
-    )
+    	if (message) {
+        return (
+          <div>
+            <p>Error!</p>
+          </div>
+        )
+      }
+      else{
+        return null
+      }
   }
 }
 
